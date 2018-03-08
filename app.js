@@ -20,6 +20,8 @@ window.PL = window.PL || {};
 		setTimeout(function() {},1000);
 		$('#alcool').addClass('result' + getRandomInt(6));
 		$('#soda').addClass('result' + getRandomInt(6));
+		$('#topper').addClass('result' + getRandomInt(6));
+		$('#hardcore').addClass('result' + getRandomInt(6));
 	}
 
 	// Public function

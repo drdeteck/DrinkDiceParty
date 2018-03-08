@@ -37,8 +37,14 @@ body {
 	display: block;
 	min-height: 100%;
 	margin: 0;
-	padding: 0 0 200px;
+	/* padding: 0 0 200px; */
 	text-align: center;
+}
+
+h1 {
+	font-size: 9.8rem;
+	text-shadow: 1px 1px 2px rgba(22, 22, 22, 0.25);
+	margin-top: 4.0rem;
 }
 
 .cb {
@@ -48,15 +54,11 @@ body {
 	position: relative;
 }
 
-h1.header {
-	font-size: 9.8rem;
-	text-shadow: 1px 1px 2px rgba(22, 22, 22, 0.25);
-	margin-top: 4.0rem;
-}
-
-#dice-container, #go-container {
+#dice-container,
+#go-container {
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
 }
 
 #go {
@@ -75,27 +77,29 @@ h1.header {
 	width: 200px;
 	height: 200px;
 	padding: 0;
-	margin: 100px;
+	margin: 100px 50px;
 	display: inline-block;
 }
 
 ul {
-    display: block;
+	display: block;
 	list-style: none;
 	position: relative;
 	width: 100%;
 	height: 100%;
 	padding: 0;
 	margin: 0;
-    
+
 	transform-style: preserve-3d;
 	transition: transform 0.5s ease;
 	animation-duration: 3s;
-    animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+
+	/* transform: rotateX(45deg) rotateY(45deg); */
 }
 
 #soda {
-    animation-delay: 0.2s;
+	/* animation-delay: 0.2s; */
 }
 
 li {
@@ -193,6 +197,48 @@ li:nth-child(6) {
 	transform: rotateX(-90deg) translateZ(100px);
 }
 
+/* Mobile */
+@media (max-width: 481px) {
+	h1 {
+		margin-top: 20px;
+		margin-bottom: 0px;
+	}
+
+	.dice {
+		width: 120px;
+		height: 120px;
+		margin: 30px;
+	}
+
+	.dice li {
+		font-size: 22px;
+	}
+
+	li:nth-child(1) {
+		transform: rotateX(90deg) translateZ(60px);
+	}
+
+	li:nth-child(2) {
+		transform: rotateX(180deg) translateZ(60px);
+	}
+
+	li:nth-child(3) {
+		transform: rotateY(90deg) translateZ(60px);
+	}
+
+	li:nth-child(4) {
+		transform: rotateY(-90deg) translateZ(60px);
+	}
+
+	li:nth-child(5) {
+		transform: rotateX(0deg) translateZ(60px);
+	}
+
+	li:nth-child(6) {
+		transform: rotateX(-90deg) translateZ(60px);
+	}
+}
+
 /* Animation Setup */
 ul.result1 {
 	animation-name: rotation1;
@@ -234,7 +280,7 @@ ul.result6 {
 		transform: rotateX(0deg) rotateY(0deg);
 	}
 	100% {
-		transform: rotateX(calc(360deg * 10)) rotateY(calc(360deg * 10 + 270deg));        
+		transform: rotateX(calc(360deg * 10)) rotateY(calc(360deg * 10 + 270deg));
 	}
 }
 @keyframes rotation4 {
@@ -258,6 +304,6 @@ ul.result6 {
 		transform: rotateX(0deg) rotateY(0deg);
 	}
 	100% {
-		transform: rotateX(calc(360deg * 10 + 90deg)) rotateY(calc(360deg * 10));        
+		transform: rotateX(calc(360deg * 10 + 90deg)) rotateY(calc(360deg * 10));
 	}
 }
