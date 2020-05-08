@@ -11,13 +11,17 @@ window.PL = window.PL || {};
 		dice1: ''
 	};
 
+	function sleep(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+	  }
+
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max)) + 1;
       }
 
-	function Go() {
+	async function  Go() {
 		$('ul').removeClass();
-		setTimeout(function() {},1000);
+		await sleep(5);
 		$('#alcool').addClass('result' + getRandomInt(6));
 		$('#soda').addClass('result' + getRandomInt(6));
 		$('#topper').addClass('result' + getRandomInt(6));
